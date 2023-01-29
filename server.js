@@ -107,7 +107,7 @@ app.delete("/round/:id", async (req, res) => {
 
 
 app.get("/shiftlog/", async (req, res) => {
-  res.json(await dynamo.get());
+  res.json(await dynamo.getshiftlog());
 });
 app.post("/shiftlog/", async (req, res) => {
   try {
