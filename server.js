@@ -136,7 +136,7 @@ app.delete("/shiftlog/:id", async (req, res) => {
   }
 });
 
-var server = app.listen(9010, () => {
+var server = app.listen(900, () => {
   console.log("server is runnig on post 9010 ");
 });
 
