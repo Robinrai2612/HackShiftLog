@@ -81,7 +81,7 @@ const deleteTaskById = async (id) => {
 // round
 
 
-const TABLE_NAME_3 = "Rounds ";
+const TABLE_NAME_3 = "Rounds";
 const getround = async () => {
   const params = {
     TableName: TABLE_NAME_3,
@@ -116,6 +116,44 @@ const deleteroundById = async (id) => {
 };
 
 
+//shiftlog
+
+
+const TABLE_NAME_4 = "ShiftLog";
+const getshiftlog = async () => {
+  const params = {
+    TableName: TABLE_NAME_4,
+  };
+  const shiftlog = await dynamoClient.scan(params).promise();
+  return shiftlog;
+};
+const getshiftlogById = async (id) => {
+  const params = {
+    TableName: TABLE_NAME_4,
+    Key: {
+      id,
+    },
+  };
+  return await dynamoClient.get(params).promise();
+};
+const createorUpdateshiftlog = async (round) => {
+  const params = {
+    TableName: TABLE_NAME_4,
+    Item: round,
+  };
+  return await dynamoClient.put(params).promise();
+};
+const deleteshiftlogById = async (id) => {
+  const params = {
+    TableName: TABLE_NAME_4,
+    Key: {
+      id,
+    },
+  };
+  return await dynamoClient.delete(params).promise();
+};
+
+
 module.exports = {
   dynamoClient,
   getTask,
@@ -130,5 +168,10 @@ module.exports = {
   createorUpdateround,
   getroundById,
   deleteroundById,
+  getshiftlog,
+  createorUpdateshiftlog,
+  getshiftlogById,
+  deleteshiftlogById,
+
 };
 
