@@ -1,0 +1,37 @@
+// const noti = {
+//   id: "1",
+//   title: "Notification 1",
+//   descrption: "A description of the notification.",
+//   due_date: "2023-01-28",
+//   priority: "high",
+//   category: "malfunction",
+//   assign_to: "dp",
+//   location: "Lorem ipsum",
+//   location_lat: -123.45,
+//   location_lon: 123.45,
+// };
+// createNotificatoin(noti);
+// getNotifications();
+/*
+"@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "@babel/register": "^7.8.3",
+"nodemon": "^2.0.2"
+"body-parser": "^1.19.0",
+pradeep barik10:51 PM
+require("regenerator-runtime");// this library is for transpiling async function
+// Transpile all code following this line with babel and use '@babel/preset-env' (aka ES6) preset.
+require("@babel/register")({
+    presets: ["@babel/preset-env"]
+});
+// Import the rest of our application.
+module.exports = require('./server')
+pradeep barik10:53 PM
+import express from 'express';
+const app = express();
+var server=app.listen(9010,()=>{
+console.log("server is runnig on post 9010 ")
+})
+pradeep barik10:54 PM
+"start": "nodemon index.js",
+*/
