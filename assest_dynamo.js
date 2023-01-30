@@ -154,6 +154,157 @@ const deleteshiftlogById = async (id) => {
 };
 
 
+// Actions 
+
+
+const TABLE_NAME_5 = "Actions";
+const getaction = async () => {
+  const params = {
+    TableName: TABLE_NAME_5,
+  };
+  const action = await dynamoClient.scan(params).promise();
+  return action;
+};
+const getactionById = async (id) => {
+  const params = {
+    TableName: TABLE_NAME_5,
+    Key: {
+      id,
+    },
+  };
+  return await dynamoClient.get(params).promise();
+};
+const createorUpdateaction = async (round) => {
+  const params = {
+    TableName: TABLE_NAME_5,
+    Item: round,
+  };
+  return await dynamoClient.put(params).promise();
+};
+const deleteactionById = async (id) => {
+  const params = {
+    TableName: TABLE_NAME_5,
+    Key: {
+      id,
+    },
+  };
+  return await dynamoClient.delete(params).promise();
+};
+
+
+// Exceptions
+
+
+const TABLE_NAME_6 = "Exceptions";
+const getexception = async () => {
+  const params = {
+    TableName: TABLE_NAME_6,
+  };
+  const exception = await dynamoClient.scan(params).promise();
+  return exception;
+};
+const getexceptionById = async (id) => {
+  const params = {
+    TableName: TABLE_NAME_6,
+    Key: {
+      id,
+    },
+  };
+  return await dynamoClient.get(params).promise();
+};
+const createorUpdateexception = async (round) => {
+  const params = {
+    TableName: TABLE_NAME_6,
+    Item: round,
+  };
+  return await dynamoClient.put(params).promise();
+};
+const deleteexceptionById = async (id) => {
+  const params = {
+    TableName: TABLE_NAME_4,
+    Key: {
+      id,
+    },
+  };
+  return await dynamoClient.delete(params).promise();
+};
+
+// IssueLogs
+
+
+const TABLE_NAME_7 = "IssueLogs";
+const getissuelog = async () => {
+  const params = {
+    TableName: TABLE_NAME_7,
+  };
+  const issuelog = await dynamoClient.scan(params).promise();
+  return issuelog;
+};
+const getissuelogById = async (id) => {
+  const params = {
+    TableName: TABLE_NAME_7,
+    Key: {
+      id,
+    },
+  };
+  return await dynamoClient.get(params).promise();
+};
+const createorUpdateissuelog = async (round) => {
+  const params = {
+    TableName: TABLE_NAME_7,
+    Item: round,
+  };
+  return await dynamoClient.put(params).promise();
+};
+const deleteissuelogById = async (id) => {
+  const params = {
+    TableName: TABLE_NAME_7,
+    Key: {
+      id,
+    },
+  };
+  return await dynamoClient.delete(params).promise();
+};
+
+// Incompleted Task
+
+
+const TABLE_NAME_8 = "IncompletedTasks";
+const getincompletedtask = async () => {
+  const params = {
+    TableName: TABLE_NAME_8,
+  };
+  const incompletedtask = await dynamoClient.scan(params).promise();
+  return incompletedtask;
+};
+const getincompletedtaskById = async (id) => {
+  const params = {
+    TableName: TABLE_NAME_8,
+    Key: {
+      id,
+    },
+  };
+  return await dynamoClient.get(params).promise();
+};
+const createorUpdateincompletedtask = async (round) => {
+  const params = {
+    TableName: TABLE_NAME_8,
+    Item: round,
+  };
+  return await dynamoClient.put(params).promise();
+};
+const deleteincompletedtaskById = async (id) => {
+  const params = {
+    TableName: TABLE_NAME_8,
+    Key: {
+      id,
+    },
+  };
+  return await dynamoClient.delete(params).promise();
+};
+
+
+
 module.exports = {
   dynamoClient,
   getTask,
@@ -172,6 +323,22 @@ module.exports = {
   createorUpdateshiftlog,
   getshiftlogById,
   deleteshiftlogById,
+  getaction,
+  createorUpdateaction,
+  getactionById,
+  deleteactionById,
+  getexception,
+  createorUpdateexception,
+  getexceptionById,
+  deleteexceptionById,
+  getissuelog,
+  createorUpdateissuelog,
+  getissuelogById,
+  deleteissuelogById,
+  getincompletedtask,
+  createorUpdateincompletedtask,
+  getincompletedtaskById,
+  deleteincompletedtaskById,  
 
 };
 
